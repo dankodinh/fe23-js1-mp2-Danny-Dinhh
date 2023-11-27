@@ -32,7 +32,7 @@ body {
 }
 
 .choice img {
-    width: 100px; /* Adjust size as necessary */
+    width: 100px;
     height: auto;
     margin-top: 40px;
 }
@@ -108,9 +108,9 @@ h1.extra {
 }
 
 #game-winner {
-    /* Your styles for the game winner text */
+    /* Stil for vinnare text */
     text-align: center;
-    margin-bottom: 10px; /* Adjust as needed */
+    margin-bottom: 10px;
 }
 
 
