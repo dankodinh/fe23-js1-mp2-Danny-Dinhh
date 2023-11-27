@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="game">
+        <h1>VIDEO GAME</h1>
+        <h1 class="extra">STEN - SAX - PÅSE</h1>
+        <div id="choices">
+            <div class="choice" id="rock">
+                <img src="rock.png" alt="Rock">
+                <p>ROCK</p>
+            </div>
+            <div class="choice" id="scissors">
+                <img src="scissors.png" alt="Scissors">
+                <p>SCISSORS</p>
+            </div>
+            <div class="choice" id="paper">
+                <img src="paper.png" alt="Paper">
+                <p>PAPER</p>
+            </div>
+        </div>
+  <!-- Add the following to your HTML where appropriate -->
+
+<!-- Visar poängen-->
+<p>User score: <span id="user-score">0</span> Computer score: <span id="computer-score">0</span></p>
+<div id="player-choice"></div>
+<div id="computer-choice"></div>
+
+<!--Visar resultat efter varje runda. -->
+<p id="result-message"></p>
+
+<!-- Visar vinnaren av hela spelet -->
+<p id="game-winner"></p>
+<button id="reset-button">Reset Game</button>
+
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
