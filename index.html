@@ -12,6 +12,13 @@
 <body>
 
     <div id="game">
+        <div id="nameInputSection">
+            <input type="text" id="playerNameInput" placeholder="Enter your name">
+            <button id="submitNameButton">Submit</button>
+        </div>
+        <span id="playerNameDisplay"></span>
+        <div id="gameSection" style="display: none;">
+        </div>
         <h1>VIDEO GAME</h1>
         <h1 class="extra">STEN - SAX - PÅSE</h1>
         <div id="choices">
@@ -28,10 +35,9 @@
                 <p>PAPER</p>
             </div>
         </div>
-  <!-- Add the following to your HTML where appropriate -->
-
+        
 <!-- Visar poängen-->
-<p>User score: <span id="user-score">0</span> Computer score: <span id="computer-score">0</span></p>
+<p> <span id="user-score">0</span> <span id="computer-score">0</span></p>
 <div id="player-choice"></div>
 <div id="computer-choice"></div>
 
