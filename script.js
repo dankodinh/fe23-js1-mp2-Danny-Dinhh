@@ -1,3 +1,15 @@
+document.getElementById('submitNameButton').addEventListener('click', function() {
+    const playerName = document.getElementById('playerNameInput').value;
+    if (playerName) {
+        isNameSubmitted = true; // True = när namn blir submitted.
+        document.getElementById('nameInputSection').style.display = 'none';
+        document.getElementById('gameSection').style.display = 'block';
+        document.getElementById('playerNameDisplay').innerText = playerName; // Display the name
+    } else {
+        alert("Please enter your name to start the game.");
+    }
+});
+
 let userScore = 0; // Användarens poäng
 let computerScore = 0; // Datorns poäng
 let gameEnded = false; // Flagga för att indikera om spelet är slut
@@ -9,23 +21,28 @@ function getComputerChoice() {
     return choices[randomNumber].toLowerCase(); // Returnerar datorns val i små bokstäver
 }
 
-// Funktion för att uppdatera textinnehållet i ett HTML-element
+// Function to update the text content of an HTML element
 function updateDisplay(elementId, text) {
-    const element = document.getElementById(elementId); // Hämtar elementet med angivet ID
-    element.textContent = text; // Uppdaterar textinnehållet i elementet
+    const element = document.getElementById(elementId); // Get the element with the specified ID
+    element.textContent = text; // Update the text content of the element
 }
 
-// Funktion för att hantera en runda av spelet
+// Funktion för att uppdatera textinnehållet i ett HTML-element
 function playRound(playerSelection) {
-    if (gameEnded) { // Kontrollerar om spelet är slut
+    if (!isNameSubmitted) {
+        alert("Please submit your name before playing.");
+        return;
+    }
+
+    if (gameEnded) { 
         updateDisplay('round-result', 'Game has ended. Please reset to play again.');
-        return; // Avbryter funktionen om spelet är slut
+        return; 
     }
 
     const computerSelection = getComputerChoice(); // Hämtar datorns val
     playerSelection = playerSelection.toLowerCase(); // Omvandlar spelarens val till små bokstäver
 
-    // Visar spelarens och datorns val
+   // Visar spelarens och datorns val
     updateDisplay('player-choice', `Your choice: ${playerSelection}`);
     updateDisplay('computer-choice', `Computer's choice: ${computerSelection}`);
 
@@ -33,12 +50,12 @@ function playRound(playerSelection) {
     if (playerSelection === computerSelection) { // Kontrollerar om det är oavgjort
         roundResult = "It's a draw!";
     } else {
-        // Kontrollerar om spelaren vinner
-        const jagSpelare = (playerSelection === 'rock' && computerSelection === 'scissors') ||
+        // Check if the player wins
+        const playerWins = (playerSelection === 'rock' && computerSelection === 'scissors') ||
                           (playerSelection === 'scissors' && computerSelection === 'paper') ||
                           (playerSelection === 'paper' && computerSelection === 'rock');
 
-        if (jagSpelare) { // Om spelaren vinner
+        if (playerWins) { 
             userScore++; // Ökar spelarens poäng
             roundResult = `You win this round! ${playerSelection} beats ${computerSelection}`;
         } else { // Om datorn vinner
@@ -47,8 +64,8 @@ function playRound(playerSelection) {
         }
 
         // Uppdaterar poängen
-        updateDisplay('user-score', userScore);
-        updateDisplay('computer-score', computerScore);
+        updateDisplay('user-score', `User score: ${userScore}`);
+        updateDisplay('computer-score', `Computer score: ${computerScore}`);
 
         // Kontrollerar om någon har vunnit spelet
         if (userScore === 3 || computerScore === 3) {
@@ -66,8 +83,8 @@ function resetGame() {
     computerScore = 0; // Nollställer datorns poäng
     gameEnded = false; // Återställer flaggan för spelstatus
     // Rensar visad information på skärmen
-    updateDisplay('user-score', userScore);
-    updateDisplay('computer-score', computerScore);
+    updateDisplay('user-score', `User score: ${userScore}`);
+    updateDisplay('computer-score', `Computer score: ${computerScore}`);
     updateDisplay('game-winner', '');
     updateDisplay('player-choice', '');
     updateDisplay('computer-choice', '');
