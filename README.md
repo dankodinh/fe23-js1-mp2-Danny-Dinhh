@@ -24,5 +24,12 @@ Detta repositorium innehåller källkoden för ett enkelt och interaktivt Sten-S
 ## Demo
 Du kan spela spelet online här (https://dankodinh.github.io/fe23-js1-mp2-Danny-Dinhh/).
 
-## Författare
-**Danny Dinh**
+## Uppdateringar
+Jag har implementerat en förändring i spelet för att möjliggöra korrekt angivande av spelarens namn:
+- Användarinput ligger nu inom ett form-element för korrekt hantering av namnangivelse.
+- En eventlistener för submit har lagts till för att fånga användarens namn och starta spelet.
+
+Detta tillåter spelaren att ange sitt namn på ett korrekt sätt och bör förbättra användarupplevelsen genom att göra det mer intuitivt och lättförståeligt.
+
+**Författare: Danny Dinh**
+
