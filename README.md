@@ -22,7 +22,7 @@ Detta repositorium innehåller källkoden för ett enkelt och interaktivt Sten-S
 - JavaScript
 
 ## Demo
-Du kan spela spelet online [här](https://dankodinh.github.io/fe23-js1-mp2-Danny-Dinhh/).
+Du kan spela spelet online [här] (https://dankodinh.github.io/fe23-js1-mp2-Danny-Dinhh/).
 
 ## Författare
 **Danny Dinh**
