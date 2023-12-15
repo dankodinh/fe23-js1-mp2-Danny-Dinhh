@@ -1,15 +1,17 @@
-document.getElementById('submitNameButton').addEventListener('click', function() {
+document.getElementById('nameForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Default
     const playerName = document.getElementById('playerNameInput').value;
     if (playerName) {
-        isNameSubmitted = true; // True = när namn blir submitted.
-        document.getElementById('nameInputSection').style.display = 'none';
-        document.getElementById('gameSection').style.display = 'block';
-        document.getElementById('playerNameDisplay').innerText = playerName; // Display the name
+        isNameSubmitted = true;
+        document.getElementById('nameForm').style.display = 'none'; // Gömmer sig från spelet
+        document.getElementById('gameSection').style.display = 'block'; // Visar spel sektionen
+        document.getElementById('playerNameDisplay').innerText = playerName;
     } else {
         alert("Please enter your name to start the game.");
     }
 });
 
+let isNameSubmitted = false;
 let userScore = 0; // Användarens poäng
 let computerScore = 0; // Datorns poäng
 let gameEnded = false; // Flagga för att indikera om spelet är slut
